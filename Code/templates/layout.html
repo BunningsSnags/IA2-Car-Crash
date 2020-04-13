@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Links and CSS -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/static/styles.css">
+
+    <!-- Title -->
+    {% block title %}
+      <title>default bar title</title>
+    {% endblock %}
+  </head>
+
+  <body>
+    <!-- Header -->
+    <header>
+    {% block heading %}
+        <h1> Default Page Title </h1>
+    {% endblock %}
+    </header>
+
+    <!-- Nav Bar -->
+    <nav>
+      <div>
+        <div class="w3-bar w3-theme-d2 w3-left-align">
+            <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-hover-white w3-theme-d2" href="javascript:void(0);" onclick="openNav()"><i class="fa fa-bars"></i></a>
+            <a href="/" class="w3-bar-item w3-button w3-teal"><i class="fa fa-home w3-margin-right"></i>Home</a>
+            <a href="{{url_for('crash')}}" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Crashes</a>
+            <a href="{{url_for('map')}}" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Map</a>
+            <a href="#" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Report Crash</a>
+            <a href="#" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Fourth</a>
+            {% block dropdown %}
+                <!-- Dropdown code here -->
+            {% endblock %}
+        <!-- <a href="#" class="w3-bar-item w3-button w3-hide-small w3-right w3-hover-teal" title="Search"><i class="fa fa-search"></i></a> -->
+        </div>
+
+    <!-- Navbar on small screens -->
+        <div id="navDemo" class="w3-bar-block w3-theme-d2 w3-hide w3-hide-large w3-hide-medium">
+            <a href="#" class="w3-bar-item w3-button">Crashes</a>
+            <a href="#" class="w3-bar-item w3-button">Location</a>
+            <a href="#" class="w3-bar-item w3-button">Maps</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        {% block section1 %}
+            <!-- Content for section -->
+        {% endblock %}
+
+        {% block section2 %}
+            <!-- Content for section -->
+        {% endblock %}
+
+        {% block section3 %}
+            <!-- Content for section -->
+        {% endblock %}
+    </main>
+
+        <!-- Footer -->
+        <footer class="w3-container w3-padding-32 w3-theme-d1 w3-center">
+            <h4>Follow Us</h4>
+            <a class="w3-button w3-large w3-teal" href="javascript:void(0)" title="Facebook"><i class="fa fa-facebook"></i></a>
+            <a class="w3-button w3-large w3-teal" href="javascript:void(0)" title="Twitter"><i class="fa fa-twitter"></i></a>
+            <a class="w3-button w3-large w3-teal" href="javascript:void(0)" title="Google +"><i class="fa fa-google-plus"></i></a>
+            <a class="w3-button w3-large w3-teal" href="javascript:void(0)" title="Google +"><i class="fa fa-instagram"></i></a>
+            <a class="w3-button w3-large w3-teal w3-hide-small" href="javascript:void(0)" title="Linkedin"><i class="fa fa-linkedin"></i></a>
+            <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
+        </footer>
+    </body>
+
+    <script>
+        // Script for side navigation
+        function w3_open() {
+            var x = document.getElementById("mySidebar");
+            x.style.width = "300px";
+            x.style.paddingTop = "10%";
+            x.style.display = "block";
+        }
+
+        // Close side navigation
+        function w3_close() {
+            document.getElementById("mySidebar").style.display = "none";
+        }
+
+    // Used to toggle the menu on smaller screens when clicking on the menu button
+        function openNav() {
+            var x = document.getElementById("navDemo");
+            if (x.className.indexOf("w3-show") == -1) {
+                x.className += " w3-show";
+            } else { 
+                x.className = x.className.replace(" w3-show", "");
+            }
+        }
+    </script>
+    
+</html>

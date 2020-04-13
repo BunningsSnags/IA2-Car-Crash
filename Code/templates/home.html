@@ -1,0 +1,124 @@
+{% extends "layout.html" %}
+
+{% block title %}
+  <title>Home</title>
+{% endblock %}
+
+{% block heading %}
+  <h1>Home Page</h1>
+{% endblock %}
+
+{% block dropdown %}
+    <div class="w3-dropdown-hover w3-hide-small">
+        <button class="w3-button" title="Notifications">Sections<i class="fa fa-caret-down"></i></button>     
+        <div class="w3-dropdown-content w3-card-4 w3-bar-block">
+            <a href="#info" class="w3-bar-item w3-button">Information</a>
+            <a href="#damage" class="w3-bar-item w3-button">Damage</a>
+            <a href="#minimap" class="w3-bar-item w3-button">Minimap</a>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+  <!-- Work Row -->
+  {% block section1 %}
+  <div class="w3-row-padding w3-padding-64 w3-theme-l1" id="info">
+
+    <div class="w3-quarter">
+        <h2>Our Work</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </div>
+
+    <div class="w3-third">
+        <div class="w3-card w3-dark-gray">
+            <img src="/static/images/crash3.png" alt="Snow" style="margin-left:15px; width:10%">
+            <div class="w3-container">
+                <h3>Customer 1</h3>
+                <p>Blablabla</p>
+                <p>Blablabla</p>
+                <p>Blablabla</p>
+                <p>Blablabla</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="w3-third">
+        <div class="w3-card w3-dark-gray">
+            <img src="/static/images/map-icon2.png" alt="Lights" style="margin-left:15px; width:10%">
+            <div class="w3-container">
+                <h3>Customer 2</h3>
+                <p>Blablabla</p>
+                <p>Blablabla</p>
+                <p>Blablabla</p>
+                <p>Blablabla</p>
+            </div>
+        </div>
+    </div>
+
+        </div>
+    </div>
+    {% endblock %}
+
+    {% block section2 %}
+    <!-- Pricing Row -->
+    <div class="w3-row-padding w3-center w3-padding-64 w3-theme-l1" id="damage">
+    <h2>Damage Factoring</h2>
+    <p>Crashes have been devided into four main sections based on their damage. These are listed bellow</p><br>
+
+    <div class="w3-quarter w3-margin-bottom">
+        <ul class="w3-ul w3-border w3-hover-shadow">
+            <li class="w3-theme">
+                <p class="w3-xlarge">Minor</p>
+            </li>
+            <li style='height: 160px; text-align: center;'><b>Minor</b> class is where there are zero fatalities and little to no medical attentions. This includes Property Damage and Minor Treatment</li>
+                <li class="w3-theme-l5 w3-padding">
+                <button class="w3-button w3-teal w3-padding-large"><i class="fa"></i>View</button>
+            </li>
+        </ul>
+    </div>
+
+    <div class="w3-quarter w3-margin-bottom">
+        <ul class="w3-ul w3-border w3-hover-shadow">
+            <li class="w3-theme">
+                <p class="w3-xlarge">Mid-range</p>
+            </li>
+            <li style='height: 160px; text-align: center;'><b>Mid-range</b> class involves medical attention that has little to no fatality rate. This includes Medical Attention and Hospitalisation</li>
+                <li class="w3-theme-l5 w3-padding">
+                <button class="w3-button w3-teal w3-padding-large"><i class="fa"></i>View</button>
+            </li>
+        </ul>
+    </div>
+
+    <div class="w3-quarter w3-margin-bottom">
+        <ul class="w3-ul w3-border w3-hover-shadow">
+            <li class="w3-theme">
+                <p class="w3-xlarge">Major</p>
+            </li>
+            <li style='height: 160px; text-align: center;'><b>Major</b> class involves fatality rates that are not above 30 or hospitals rates that are above 100. This includes Fatal, Hospitalisation and Medical Treatment</li>
+                <li class="w3-theme-l5 w3-padding">
+                <button class="w3-button w3-teal w3-padding-large"><i class="fa"></i>View</button>
+            </li>
+        </ul>
+    </div>
+
+    <div class="w3-quarter w3-margin-bottom">
+        <ul class="w3-ul w3-border w3-hover-shadow">
+            <li class="w3-theme">
+                <p class="w3-xlarge">Extreme</p>
+            </li>
+            <li style='height: 160px; text-align: center;'><b>Extreme</b> class is where there is a fatality rate above 30 and is classed as a Fatal severity</li>
+                <li class="w3-theme-l5 w3-padding">
+                <button class="w3-button w3-teal w3-padding-large"><i class="fa"></i>View</button>
+            </li>
+        </ul>
+    </div>
+    </div>
+    {% endblock %}
+
+    {% block section3 %}
+        <div class="w3-row-padding w3-padding-64 w3-theme-l1" id="minimap">
+            <h2>Minimap</h2>
+        </div>
+    {% endblock %}
+
+{% endblock %}
