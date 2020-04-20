@@ -1,0 +1,125 @@
+{% extends "layout.html" %}
+
+{% block title %}
+  <title>Report</title>
+{% endblock %}
+
+{% block heading %}
+  <h1>Report Page</h1>
+{% endblock %}
+
+{% block dropdown %}
+    <div class="w3-dropdown-hover w3-hide-small">
+        <button class="w3-button" title="Notifications">Sections<i class="fa fa-caret-down"></i></button>     
+        <div class="w3-dropdown-content w3-card-4 w3-bar-block">
+            <a href="#detail" class="w3-bar-item w3-button">Details</a>
+            <a href="#incident" class="w3-bar-item w3-button">Incident Information</a>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+    {% block section1 %}
+    <div class="w3-row-padding w3-theme-l1 w3-center">
+        <h2 class="w3-center">Personal Details</h2>
+        <form class="w3-row-padding w3-padding-16 w3-half">
+            <label for="fname" class="">First name:</label><br>
+            <input type="text" id="fname" name="fname"><br>
+            <label for="lname">Last name:</label><br>
+            <input type="text" id="lname" name="lname">
+        </form>
+        <form class="w3-row-padding w3-padding-16 w3-half">
+            <label for="fname" style="width: 200px">Number</label><br>
+            <input type="text" id="fname" name="fname"><br>
+        </form>
+    </div>
+    {% endblock %}
+
+    {% block section2 %}
+    <div class="w3-row-padding w3-theme-l1 w3-padding-32">
+        <div class="w3-padding-16 w3-center">
+            <h2 class="w3-center">Incident Information</h2>
+            <div class="w3-row-padding w3-padding-16 w3-quarter">
+                <form>
+                    <label for="fname" class="">Year</label><br>
+                    <input type="text" id="fname" name="fname"><br>
+                </form>
+            </div>
+            <div class="w3-row-padding w3-padding-16 w3-quarter">
+                <form>
+                    <label for="lname">Location</label><br>
+                    <input type="text" id="lname" name="lname">
+                </form>
+            </div>
+            <p style="margin-bottom: 4px; margin-right: 2000px;">Severity</p>
+            <select id="cars" name="cars" class="w3-third w3-row-padding">
+                <option value="volvo">Property</option>
+                <option value="saab">Minor</option>
+                <option value="fiat">Medical Treatment</option>
+                <option value="audi">Hospitalised</option>
+                <option value="audi">Fatal</option>
+            </select>
+        </div>
+        <div class="w3-padding-32 w3-row-padding w3-center">
+            <form class="w3-padding-16 w3-quarter w3-theme-l1">
+                <p>Drink Dirving</p>
+                <input type="radio" id="male" name="drink" value="yes">
+                <label for="male">Yes</label><br>
+                <input type="radio" id="female" name="gender" value="no">
+                <label for="female">No</label><br>
+            </form>
+            <form class="w3-padding-16 w3-quarter w3-theme-l1">
+                <p>Speeding</p>
+                <input type="radio" id="male" name="gender" value="yes">
+                <label for="male">Yes</label><br>
+                <input type="radio" id="female" name="gender" value="no">
+                <label for="female">No</label><br>
+            </form>
+            <form class="w3-padding-16 w3-quarter w3-theme-l1">
+                <p>Fatigued Driver</p>
+                <input type="radio" id="male" name="gender" value="yes">
+                <label for="male">Yes</label><br>
+                <input type="radio" id="female" name="gender" value="no">
+                <label for="female">No</label><br>
+            </form>
+            <form class="w3-padding-16 w3-quarter w3-theme-l1">
+                <p>Broken Vechile</p>
+                <input type="radio" id="male" name="gender" value="yes">
+                <label for="male">Yes</label><br>
+                <input type="radio" id="female" name="gender" value="no">
+                <label for="female">No</label><br>
+            </form>
+        </div>
+        <div class="w3-padding-32 w3-center">
+            <form class="w3-padding-16 w3-third w3-theme-l1">
+                <label for="lname">Crash Count</label><br>
+                <input type="text" id="lname" name="lname">
+            </form>
+            <form class="w3-padding-16 w3-third w3-theme-l1">
+                <label for="lname">Fatality Count</label><br>
+                <input type="text" id="lname" name="lname">
+            </form>
+            <form class="w3-padding-16 w3-third w3-theme-l1">
+                <label for="lname">Hospitalised Count</label><br>
+                <input type="text" id="lname" name="lname">
+            </form>
+            <form class="w3-padding-16 w3-third w3-theme-l1">
+                <label for="lname">Medically Treated Count</label><br>
+                <input type="text" id="lname" name="lname">
+            </form>
+            <form class="w3-padding-16 w3-third w3-theme-l1">
+                <label for="lname">Minor Count</label><br>
+                <input type="text" id="lname" name="lname">
+            </form>
+            <form class="w3-padding-16 w3-third w3-theme-l1">
+                <label for="lname">All Casualties</label><br>
+                <input type="text" id="lname" name="lname">
+            </form>
+        </div>
+        <div class="w3-center w3-padding">
+            <button class="w3-button w3-hover-red w3-round w3-block w3-black" style="width:50%; border: 0px;" >Report Incident</button>
+        </div>
+    </div>
+    {% endblock %}
+
+{% endblock %}

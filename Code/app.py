@@ -1,5 +1,6 @@
 """Example of grouping commands and sqlite3"""
-import sqlite3 import csv
+import sqlite3
+import csv
 from pathlib import Path
 import click
 from flask import Flask, g, current_app, render_template
@@ -8,12 +9,13 @@ from flask.cli import AppGroup
 
 APP = Flask(__name__)
 DATA_CLI = AppGroup('data', help="commands for managing data accounts")
-CRASHCSV = 'crashData-CSV'
+CRASHCSV = 'data/crashData-CSV'
 MAPCSV = 'data/mapData-CSV'
-CRASHDATABASE = 'crashData.db'
+CRASHDATABASE = 'data/crashData.db'
 MAPDATABASE = 'data/mapData.db'
 APP.config['CRASHDATABASE'] = CRASHDATABASE
 APP.config['MAPDATABASE'] = MAPDATABASE
+
 
 def isfile(file):
     """check whether the file actually exists, relative to instance folder"""
@@ -45,18 +47,19 @@ def initdb_crash():
             conn.executescript("""DROP Table IF EXISTS data;
                                 CREATE TABLE data 
                                 (id INTEGER PRIMARY KEY AUTOINCREMENT,
-                                Crash_Year INT, 
+                                Crash_Year TEXT, 
                                 Crash_Police_Region TEXT,
                                 Crash_Severity TEXT,
                                 Involving_Drink_Driving TEXT,
+                                Involving_Driver_Speed TEXT,
                                 Involving_Fatigued_Driver TEXT,
                                 Involving_Defective_Vehicle TEXT,
-                                Count_Crashes INT,
-                                Count_Fatality INT,
-                                Count_Hospitalised INT,
-                                Count_Medically_Treated INT,
-                                Count_Minor_Injury INT,
-                                Count_All_Casualties INT);
+                                Count_Crashes TEXT,
+                                Count_Fatality TEXT,
+                                Count_Hospitalised TEXT,
+                                Count_Medically_Treated TEXT,
+                                Count_Minor_Injury TEXT,
+                                Count_All_Casualties TEXT);
                                 """)
             conn.commit()
     except sqlite3.DatabaseError as err:
@@ -68,19 +71,44 @@ def upload_crash(filename):
     """upload users from a csv file if the data is valid"""
     message = None
     conn = None
-    # if isfile(filename):
+    if isfile(filename):
         # ouputtuple[0] - True or False
         # ouputtuple[1] - message for user
         # ouputtuple[2] - a list of tuples containing the data
-    outputtuple = isvaliddata(filename)
-    message = outputtuple[1]
-    conn = get_db()
-    cur = conn.cursor()
-    if conn:
-        data = outputtuple[2]
-        for row in data:
-            cur.execute("INSERT INTO data (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);", row)
-        conn.commit()
+        outputtuple = isvaliddata(filename)
+        message = outputtuple[1]
+        if outputtuple[0]:
+            try:
+                # conn = sqlite3.connect(DATABASE)
+                conn = get_db()
+                if conn:
+                    conn.executemany("""INSERT INTO data (
+                                        Crash_Year, 
+                                        Crash_Police_Region,
+                                        Crash_Severity,
+                                        Involving_Drink_Driving,
+                                        Involving_Driver_Speed
+                                        Involving_Fatigued_Driver,
+                                        Involving_Defective_Vehicle,
+                                        Count_Crashes,
+                                        Count_Fatality,
+                                        Count_Hospitalised,
+                                        Count_Medically_Treated,
+                                        Count_Minor_Injury,
+                                        Count_All_Casualties) VALUES 
+                                        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);""", outputtuple[2])
+                    conn.commit()
+            except sqlite3.DatabaseError as err:
+                print("Data Upload error\n", err)
+                print(outputtuple[2])
+                message = f"Error occurred uploading {filename}."
+    else:
+        message = f"{filename} is not a file"
+    close_db()
+    if message:
+        print(message)
+
+
 
 def isvaliddata(file):
     """check whether data in csv file is valid for the database
@@ -128,6 +156,10 @@ def crash():
 @APP.route('/map')
 def map():
     return render_template('map.html')
+
+@APP.route('/report')
+def report():
+    return render_template('report.html')
 
 if __name__ == "__main__":
     APP.run(debug=True)
