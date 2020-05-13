@@ -1,0 +1,204 @@
+<html><head>
+    <!-- Links and CSS -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- <link rel="stylesheet" href="/static/styles.css"> -->
+
+    <!-- Title -->
+    
+    <title>default bar title</title>
+    
+</head>
+
+<body><div class="w3-col m8 w3-center">
+<div style="max-width:500px;margin:auto;" class="w3-display-container">
+  <div class="w3-display-left prev" style="z-index:10" onclick="displayWebPage(-1)">❮</div>
+  <div class="w3-display-right next" style="z-index:10" onclick="displayWebPage(1)">❯</div>
+
+  <div id="webpage1" class="fade" style="display: block;">
+    <div style="font-family: 'Roboto';">
+      <div class="bgcolor2" style="background-color: #000000; padding: 50px; text-align: center; position: relative;">
+        <div class="bgcolor1" style="overflow: auto; width: auto; background-color: #008080; position: absolute; left: 26px; top: 26px; text-align: left; padding: 6px;">
+          <div class="borderrightcolor3" style="float: left; padding-right: 10px; border-right: 1px solid rgb(35, 106, 185); border-top-color: rgb(35, 106, 185); border-bottom-color: rgb(35, 106, 185); border-left-color: rgb(35, 106, 185);"><span class="txcolor3 fa" style="color: rgb(35, 106, 185); font-size: 25px;"></span></div>
+          <div style="float:left;padding:5px 10px;letter-spacing:2px;font-size:10px;">www.w3schools.com</div>
+        </div>
+        <div class="w3-hide-small">
+          <div class="txcolor5" style="position: absolute; right: 15px; top: 15px; text-align: left; color: rgb(52, 38, 9); font-weight: bold; font-size: 10px;">
+            <div style="float:right;">
+              <p><span style="color: #008080; font-size: 18px;" class="txcolor1 fa fa-facebook-square fa-2x"></span>Facebook</p>
+              <p><span style="color: #008080; font-size: 18px;" class="txcolor1 fa fa-twitter-square fa-2x"></span>Twitter</p>
+            </div>
+            <div style="float:right;">
+              <p><span style="color: #008080; font-size: 18px; padding: 0px 8px;" class="txcolor1 fa fa-home fa-2x"></span>Home</p>
+              <p><span style="color: #008080; font-size: 18px;" class="txcolor1 fa fa-google-plus-square fa-2x"></span>Google+</p>
+            </div>
+          </div>
+        </div>
+        <div style="padding:30px;padding-top:20px;text-align:center"></div>
+        <h1 class="txcolor5" style="font-family: Alfa Slab One; font-size: 50px; color: white; font-weight: bold;">Theme<br><span class="txcolor4" style="color: white;">Color</span></h1>
+      </div>
+      <div class="bgcolor1" style="background-color: #333333; padding: 30px 60px; text-align: center;">
+        <div style="margin-bottom:30px;"><i class="fa fa-pied-piper txcolor3" style="font-size: 60px; color: #008080;"></i></div>
+        <p style="font-size:12px;"><b class="txcolor4" style="color: white;">Lorum Ipsum
+        dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      </div>
+      <div class="bgcolor5" style="background-color: black; padding: 1px 20px 1px 1px; text-align: right;">
+        <p class="txcolor2" style="color: rgb(253, 58, 15); font-size: 10px;">ABOUT | CONTACT</p>
+      </div>
+    </div>
+  </div>
+
+  <div id="webpage2" style="display: none;" class="fade">
+    <!-- First Grid: Logo & About -->
+    <div class="w3-row">
+      <div class="w3-half bgcolor5 txcolor1 w3-container w3-center" style="height: 320px; color: rgb(247, 218, 212); background-color: rgb(52, 38, 9);">
+        <div style="padding-top:24px">
+          <h2>My Logo</h2>
+        </div>
+        <div class="w3-padding-32" style="font-size:12px">
+          <a href="#" class="w3-button w3-block w3-padding-8">Home</a>
+          <a href="#work" class="w3-button w3-block w3-padding-8">My Work</a>
+          <a href="#work" class="w3-button w3-block w3-padding-8">Resume</a>
+          <a href="#contact" class="w3-button w3-block w3-padding-8">Contact</a>
+        </div>
+      </div>
+      <div class="w3-half bgcolor1 txcolor5 w3-container" style="height: 320px; color: rgb(52, 38, 9); background-color: rgb(247, 218, 212);">
+        <div class="w3-center" style="padding-top:24px">
+          <h2>About Me</h2>
+          <i class="fa fa-user txcolor3" style="font-size: 60px; color: rgb(35, 106, 185);"></i>
+          <div class="w3-left-align w3-padding-large" style="font-size:12px;">
+            <p>Lorem ipusm sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Second Grid: Work & Resume -->
+    <div class="w3-row">
+      <div class="w3-half bgcolor2 w3-center" style="height: 320px; background-color: rgb(253, 58, 15);" id="work">
+        <div style="padding-top:24px">
+          <h2>My Work</h2>
+          <p style="font-size:12px;">Some of my latest projects.</p>
+        </div>
+        <div class="w3-row">
+          <div class="w3-half">
+            <img src="/w3images/coffee.jpg" style="width:100%">
+          </div>
+          <div class="w3-half">
+            <img src="/w3images/workbench.jpg" style="width:100%">
+          </div>
+        </div>
+        <div class="w3-row w3-hide-small">
+          <div class="w3-half">
+            <img src="/w3images/workbench.jpg" style="width:100%">
+          </div>
+          <div class="w3-half">
+            <img src="/w3images/coffee.jpg" style="width:100%">
+          </div>
+        </div>
+        <div class="w3-row w3-hide-small">
+          <div class="w3-half">
+            <img src="/w3images/sound.jpg" style="width:100%">
+          </div>
+          <div class="w3-half">
+            <img src="/w3images/workbench.jpg" style="width:100%">
+          </div>
+        </div>
+      </div>
+      <div class="w3-half bgcolor4 w3-container txcolor1" style="height: 320px; color: rgb(247, 218, 212); background-color: rgb(251, 169, 10);">
+        <div style="padding-top:24px">
+          <h2>Contact</h2>
+          <p class="w3-opacity" style="font-size:12px;">GET IN TOUCH</p>
+          <div style="background-color:#ffffff;">
+            <div>
+              <label style="font-size:12px;color:#222222">Name</label>
+              <input class="w3-input" style="width:100%;font-size:12px;padding:2px 4px;" type="text" required="" name="Name">
+            </div>
+            <div>
+              <label style="font-size:12px;color:#222222">Email</label>
+              <input class="w3-input" style="width:100%;font-size:12px;padding:2px 4px;" type="text" required="" name="Email">
+            </div>
+            <div>
+              <label style="font-size:12px;color:#222222">Message</label>
+              <input class="w3-input" style="width:100%;font-size:12px;padding:2px 4px;" type="text" required="" name="Message">
+            </div>
+          </div>
+          <div style="overflow:auto;padding-top:10px;">
+            <button type="submit" class="w3-button bgcolor3 w3-right" style="background-color: rgb(35, 106, 185);">Send</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="webpage3" style="display: none; border: 1px solid rgb(211, 211, 211);" class="fade">
+  <div style="font-family: Poppins, sans-serif; color: rgb(52, 38, 9);" class="w3-white txcolor5">
+  <!-- The App Section -->
+  <div class="w3-padding-32">
+    <div class="w3-row-padding">
+      <div class="w3-col l8 m6">
+        <h1 class="txcolor5" style="color: rgb(52, 38, 9);"><b>The App</b></h1>
+        <h2 class="txcolor4" style="color: rgb(251, 169, 10);"><b>What is it?</b></h2>
+        <p style="font-size:10px;"><span style="font-size:16px">Take photos like a pro.</span> You should buy this app because lorem ipsum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+          ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+        <button class="w3-button bgcolor2 w3-section w3-hide-small" style="font-size: 12px; background-color: rgb(253, 58, 15);">
+          <i class="fa fa-download"></i> Download Application
+        </button>
+        <p class="txcolor5" style="font-size: 12px; color: rgb(52, 38, 9);">Available for <i class="fa fa-android w3-large"></i> <i class="fa fa-apple w3-large"></i> <i class="fa fa-windows w3-large"></i></p>
+      </div>
+      <div class="w3-col l4 m6">
+        <img src="img_app.png" class="w3-image w3-right w3-hide-small w3-padding-48" width="335" height="471">
+        <div class="w3-center w3-hide-large w3-hide-medium">
+          <button class="w3-button w3-block w3-padding-large">
+            <i class="fa fa-download"></i> Download Application
+          </button>
+          <img src="/w3images/img_app.jpg" class="w3-image w3-margin-top" width="335" height="471">
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Features Section -->
+  <div class="w3-container w3-dark-grey w3-center w3-padding-8">
+    <h1 class="txcolor2" style="color: rgb(253, 58, 15);"><b>Features</b></h1>
+    <div class="w3-row txcolor1" style="color: rgb(247, 218, 212);">
+      <div class="w3-col s3">
+        <i class="fa fa-bolt txcolor1" style="color: rgb(247, 218, 212);"></i>
+        <p>Fast</p>
+      </div>
+      <div class="w3-col s3">
+        <i class="fa fa-heart txcolor2" style="color: rgb(253, 58, 15);"></i>
+        <p>Loved</p>
+      </div>
+      <div class="w3-col s3">
+        <i class="fa fa-camera txcolor3" style="color: rgb(35, 106, 185);"></i>
+        <p>Clarity</p>
+      </div>
+      <div class="w3-col s3">
+        <i class="fa fa-battery-full txcolor4" style="color: rgb(251, 169, 10);"></i>
+        <p>Power</p>
+      </div>
+    </div>
+  
+  </div>
+  <!-- Footer -->
+  <footer class="w3-container w3-dark-grey w3-center">
+    <div class="w3-section txcolor1" style="color: rgb(247, 218, 212);">
+      <i class="fa fa-facebook-official"></i>
+      <i class="fa fa-instagram"></i>
+      <i class="fa fa-snapchat"></i>
+      <i class="fa fa-pinterest-p"></i>
+      <i class="fa fa-twittery"></i>
+      <i class="fa fa-linkedin"></i>
+    </div>
+  </footer>
+  </div>
+  
+  
+  </div>
+
+
+</div>
+</div></body></html>

@@ -26,15 +26,15 @@
 
     <div class="w3-quarter">
         <h2>Who are we?</h2>
-        <p>We are are Website made to show, report and __ crashes in the state. Here you can view both the information and the location of crashes all around Queensland.</p>
+        <p>We are are Website made to show, report and inform the dangers of crashes in the the area. Here you can view both the factors of the crash and where it took place in Queensland.</p>
     </div>
 
     <div class="w3-third">
         <div class="w3-card w3-dark-gray">
             <img src="/static/images/crash3.png" alt="Snow" style="margin-left:15px; width:10%">
             <div class="w3-container">
-                <h3>Crash List</h3>
-                <p>This website has an entire list of crashes to view and report in order to find out what is happening in your area. To access this page, head to crashes page and you will find the list of crashes. To specifically view a crash, click it and you will see all of its information</p>
+                <h3>Factors List</h3>
+                <p>This website has a list of crashes involving factors within the crash. To see this, click on "Factors" button and then click on which crash ID you would like to see.</p>
             </div>
         </div>
     </div>
@@ -43,8 +43,8 @@
         <div class="w3-card w3-dark-gray">
             <img src="/static/images/map-icon2.png" alt="Lights" style="margin-left:15px; width:10%">
             <div class="w3-container">
-                <h3>Locations</h3>
-                <p>here you will find a list of all the locations gathered by the location data base. To access, go to Map and you will find a map with a list of locations underneathe. Similarly to the crashes, click on a location to view more information</p>
+                <h3>Locations List</h3>
+                <p>This website also has a second list of crashes involving their locations within the crash. To see this, click on "Locations" button and then click on which crash ID you would like to see.</p>
             </div>
         </div>
     </div>
@@ -59,53 +59,44 @@
     <h2>Damage Factoring</h2>
     <p>Crashes have been devided into four main sections based on their damage. These are listed bellow</p><br>
 
-    <div class="w3-quarter w3-margin-bottom">
-        <ul class="w3-ul w3-border w3-hover-shadow">
-            <li class="w3-theme">
-                <p class="w3-xlarge">Minor</p>
-            </li>
-            <li style='height: 160px; text-align: center;'><b>Minor</b> class is where there are zero fatalities and little to no medical attentions. This includes Property Damage and Minor Treatment</li>
-                <li class="w3-theme-l5 w3-padding">
-                <button class="w3-button w3-teal w3-padding-large"><i class="fa"></i>View</button>
-            </li>
-        </ul>
-    </div>
+        <div class="w3-third w3-margin-bottom">
+            <ul class="w3-ul w3-border w3-hover-shadow">
+                <li class="w3-theme">
+                    <p class="w3-xlarge">Minor</p>
+                </li>
+                <li style='height: 160px; text-align: center;'><b>Minor</b> class is where there are zero fatalities and little to no medical attentions. This includes Property Damage and Minor Treatment</li>
+                    <li class="w3-theme-l5 w3-padding">
+                    <button href="/factorList" class="w3-button w3-teal w3-padding-large">View Factors</button>
+                    <button href="/locationList" class="w3-button w3-teal w3-padding-large">View Locations</button>
+                </li>
+            </ul>
+        </div>
 
-    <div class="w3-quarter w3-margin-bottom">
-        <ul class="w3-ul w3-border w3-hover-shadow">
-            <li class="w3-theme">
-                <p class="w3-xlarge">Mid-range</p>
-            </li>
-            <li style='height: 160px; text-align: center;'><b>Mid-range</b> class involves medical attention that has little to no fatality rate. This includes Medical Attention and Hospitalisation</li>
-                <li class="w3-theme-l5 w3-padding">
-                <button class="w3-button w3-teal w3-padding-large"><i class="fa"></i>View</button>
-            </li>
-        </ul>
-    </div>
+        <div class="w3-third w3-margin-bottom">
+            <ul class="w3-ul w3-border w3-hover-shadow">
+                <li class="w3-theme">
+                    <p class="w3-xlarge">Mid-range</p>
+                </li>
+                <li style='height: 160px; text-align: center;'><b>Mid-range</b> class involves medical attention that has little to no fatality rate. This includes Medical Attention and Hospitalisation</li>
+                    <li class="w3-theme-l5 w3-padding">
+                    <button href="/factorList" class="w3-button w3-teal w3-padding-large">View Factors</button>
+                    <button href="/locationList" class="w3-button w3-teal w3-padding-large">View Locations</button>
+                </li>
+            </ul>
+        </div>
 
-    <div class="w3-quarter w3-margin-bottom">
-        <ul class="w3-ul w3-border w3-hover-shadow">
-            <li class="w3-theme">
-                <p class="w3-xlarge">Major</p>
-            </li>
-            <li style='height: 160px; text-align: center;'><b>Major</b> class involves fatality rates that are not above 30 or hospitals rates that are above 100. This includes Fatal, Hospitalisation and Medical Treatment</li>
+        <div class="w3-third w3-margin-bottom">
+            <ul class="w3-ul w3-border w3-hover-shadow">
+                <li class="w3-theme">
+                    <p class="w3-xlarge">Major</p>
+                </li>
+                <li style='height: 160px; text-align: center;'><b>Major</b> class involes any form of fatality rate and Hospitalisation above 100.</li>
                 <li class="w3-theme-l5 w3-padding">
-                <button class="w3-button w3-teal w3-padding-large"><i class="fa"></i>View</button>
-            </li>
-        </ul>
-    </div>
-
-    <div class="w3-quarter w3-margin-bottom">
-        <ul class="w3-ul w3-border w3-hover-shadow">
-            <li class="w3-theme">
-                <p class="w3-xlarge">Extreme</p>
-            </li>
-            <li style='height: 160px; text-align: center;'><b>Extreme</b> class is where there is a fatality rate above 30 and is classed as a Fatal severity</li>
-                <li class="w3-theme-l5 w3-padding">
-                <button class="w3-button w3-teal w3-padding-large"><i class="fa"></i>View</button>
-            </li>
-        </ul>
-    </div>
+                    <button href="/factorList" class="w3-button w3-teal w3-padding-large">View Factors</button>
+                    <button href="/locationList" class="w3-button w3-teal w3-padding-large">View Locations</button>
+                </li>
+            </ul>
+        </div>
     </div>
     {% endblock %}
 

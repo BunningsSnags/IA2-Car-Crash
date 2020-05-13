@@ -1,66 +1,72 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <!-- Links and CSS -->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="/static/styles.css">
+    <head>
+        <!-- Links and CSS -->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="/static/styles.css">
 
-    <!-- Title -->
-    {% block title %}
-      <title>default bar title</title>
-    {% endblock %}
-  </head>
+        <!-- Title -->
+        {% block title %}
+        <title>default bar title</title>
+        {% endblock %}
+    </head>
 
-  <body>
-    <!-- Header -->
-    <header>
-    {% block heading %}
-        <h1> Default Page Title </h1>
-    {% endblock %}
-    </header>
+    <body>
+        <!-- Header -->
+        <header>
+        {% block heading %}
+            <h1> Default Page Title </h1>
+        {% endblock %}
+        </header>
 
-    <!-- Nav Bar -->
-    <nav>
-      <div>
-        <div class="w3-bar w3-theme-d2 w3-left-align">
-            <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-hover-white w3-theme-d2" href="javascript:void(0);" onclick="openNav()"><i class="fa fa-bars"></i></a>
-            <a href="/" class="w3-bar-item w3-button w3-teal"><i class="fa fa-home w3-margin-right"></i>Home</a>
-            <a href="{{url_for('crash')}}" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Crashes</a>
-            <a href="{{url_for('map')}}" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Map</a>
-            <a href="{{url_for('report')}}" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Report Crash</a>
-            {% block dropdown %}
-                <!-- Dropdown code here -->
+        <!-- Top Button -->
+        <a href="#" class="button-top w3-button w3-round-xlarge w3-teal w3-padding-small" style="color: black;">^</a>
+
+        <!-- Nav Bar -->
+        <nav>
+            <div>
+                <div class="w3-bar w3-theme-d2 w3-left-align">
+                    <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-hover-white w3-theme-d2" href="javascript:void(0);" onclick="openNav()"><i class="fa fa-bars"></i></a>
+                    <a href="/" class="w3-bar-item w3-button w3-teal"><i class="fa fa-home w3-margin-right"></i>Home</a>
+                    <a href="{{url_for('factorList')}}" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Factors</a>
+                    <a href="{{url_for('locationList')}}" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Locations</a>
+                    <a href="{{url_for('help')}}" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Help</a>
+                    <a href="{{url_for('report')}}" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Report Crash</a>
+                    {% block dropdown %}
+                        <!-- Dropdown code here -->
+                    {% endblock %}
+                <!-- <a href="#" class="w3-bar-item w3-button w3-hide-small w3-right w3-hover-teal" title="Search"><i class="fa fa-search"></i></a> -->
+                </div>
+
+            <!-- Navbar on small screens -->
+                <div id="navDemo" class="w3-bar-block w3-theme-d2 w3-hide w3-hide-large w3-hide-medium">
+                    <a href="/factorList" class="w3-bar-item w3-button">Factors</a>
+                    <a href="/locationList" class="w3-bar-item w3-button">Location</a>
+                    <a href="/help" class="w3-bar-item w3-button">Help</a>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main>
+            {% block content %}
+                {% block section1 %}
+                    <!-- Content for section -->
+                {% endblock %}
+
+                {% block section2 %}
+                    <!-- Content for section -->
+                {% endblock %}
+
+                {% block section3 %}
+                    <!-- Content for section -->
+                {% endblock %}
             {% endblock %}
-        <!-- <a href="#" class="w3-bar-item w3-button w3-hide-small w3-right w3-hover-teal" title="Search"><i class="fa fa-search"></i></a> -->
-        </div>
-
-    <!-- Navbar on small screens -->
-        <div id="navDemo" class="w3-bar-block w3-theme-d2 w3-hide w3-hide-large w3-hide-medium">
-            <a href="#" class="w3-bar-item w3-button">Crashes</a>
-            <a href="#" class="w3-bar-item w3-button">Location</a>
-            <a href="#" class="w3-bar-item w3-button">Maps</a>
-        </div>
-      </div>
-    </nav>
-
-    <!-- Main Content -->
-    <main>
-        {% block section1 %}
-            <!-- Content for section -->
-        {% endblock %}
-
-        {% block section2 %}
-            <!-- Content for section -->
-        {% endblock %}
-
-        {% block section3 %}
-            <!-- Content for section -->
-        {% endblock %}
-    </main>
+        </main>
 
         <!-- Footer -->
         <footer class="w3-container w3-padding-32 w3-theme-d1 w3-center">

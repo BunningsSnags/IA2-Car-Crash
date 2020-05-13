@@ -1,0 +1,82 @@
+{% extends "layout.html" %}
+
+{% block title %}
+  <title>Help</title>
+{% endblock %}
+
+{% block heading %}
+  <h1>Help Page</h1>
+{% endblock %}
+
+
+{% block content %}
+  {% block section1 %}
+  <h2 class="w3-center">The databases</h2>
+  <div class="w3-row-padding w3-center w3-padding-64 w3-theme-l1" id="damage">
+    <div class="w3-half w3-margin-bottom">
+      <ul class="w3-ul w3-border w3-hover-shadow">
+        <li class="w3-theme">
+            <p class="w3-xlarge">Factors Page</p>
+        </li>
+        <li style='height: 160px; text-align: center;'><b>Factors</b> is the first page of the website. In here you will find all the data from the "factorData.csv" database.   
+        <br></br>
+        <br>You can access this on the navigation bar at the top under the "Factors" button.
+        <br>To access specific information, click on the Crash ID you wish to see and it will bring you to its page.</li>
+      </ul>
+  </div>
+
+  <div class="w3-half w3-margin-bottom">
+      <ul class="w3-ul w3-border w3-hover-shadow">
+        <li class="w3-theme">
+            <p class="w3-xlarge">Location Page</p>
+        </li>
+        <li style='height: 160px; text-align: center;'><b>Locations</b> is the second page of the website. In here you will find all the data from the "locationData.csv" database. 
+          <br></br>
+          <br>You can access this on the navigation bar at the top under the "Locations" button.
+        <br>To access specific information, click on the Crash ID you wish to see and it will bring you to its page.</li>
+      </ul>
+    </div>
+  </div>
+  {% endblock %}
+
+  {% block section2 %}
+  <h2 class="w3-center">Drop-bars and Quick Navigation</h2>
+
+  <div class="w3-row-padding w3-center w3-padding-64 w3-theme-l1" id="damage">
+    <div class="w3-half w3-margin-bottom">
+      <ul class="w3-ul w3-border w3-hover-shadow">
+        <li class="w3-theme">
+            <p class="w3-xlarge">What are Drop-Bars?</p>
+        </li>
+        <li style='height: 160px; text-align: center;'>On certain pages you can find a button with a small arrow next to it. These are called <b>Drop-bars</b>, they are used to skip to certain areas of the page and are useful for navigation</li>
+      </ul>
+  </div>
+
+  <div class="w3-half">
+    <div class="w3-card w3-dark-gray">
+        <div class="w3-container">
+            <h3>Examples of Drop-bars:</h3>
+            <br></br>
+            <img class="w3-padding" src="/static/images/Sections.png"> <img class="w3-padding" src="/static/images/Damage_Factor.png">
+        </div>
+    </div>
+  </div>
+
+  <div class="w3-row-padding w3-center w3-padding-64 w3-theme-l1" id="damage">
+    <div class="w3-margin-bottom">
+      <ul class="w3-ul w3-border w3-hover-shadow">
+        <li class="w3-theme">
+            <p class="w3-xlarge">The Top Button</p>
+        </li>
+        <li style='height: 160px; text-align: center;'>On every page is a set teal button with an arrow that takes the user to the top of the page they are on. This is useful for navigating through the lists where instead of scrolling back to the top, you can hit one button and you're there.
+        <br>
+        <br> <b>The button should look like this;</b>
+        <br><img src="/static/images/Button.png"> </li>
+      </ul>
+  </div>
+  {% endblock %}
+
+  {% block section3 %}
+  <h2>Reporting Crashes - unfunctional</h2>
+  {% endblock %}
+{% endblock %}

@@ -1,0 +1,111 @@
+{% extends "layout.html" %}
+
+{% block title %}
+  <title>Crash</title>
+{% endblock %}
+
+{% block heading %}
+  <h1>Location</h1>
+{% endblock %}
+
+{% block dropdown %}
+    <div class="w3-dropdown-hover w3-hide-small">
+        <button class="w3-button" title="Notifications">Damage Factor<i class="fa fa-caret-down"></i></button>     
+        <div class="w3-dropdown-content w3-card-4 w3-bar-block">
+            <a href="#minor" class="w3-bar-item w3-button">Small</a>
+            <a href="#mid" class="w3-bar-item w3-button">Mid-Range</a>
+            <a href="#major" class="w3-bar-item w3-button">Large</a>
+            <a href="#extreme" class="w3-bar-item w3-button">Extreme</a>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <!-- Work Row -->
+    {% block section1 %}
+    <div class="w3-row-padding w3-center w3-padding-64 w3-theme-l1" id="damage">
+      <ul class="w3-ul w3-border">
+        <li class="w3-theme">
+            <p style="font-size: 23px;">Factors</p>
+        </li>
+        <li>
+          <table>
+            <tr>
+              <th style="font-size: 20px;">Severity</th>
+              <th style="font-size: 20px;">Region</th>
+              <th style="font-size: 20px;">Year Recorded</th>
+            </tr>
+            {% for col in column %}
+              <tr>
+                <td>{{ col[4] }}</td>
+                <td>{{ col[5] }}</td>
+                <td>{{ col[6] }}</td>
+              </tr>
+            {% endfor %}
+          </table>
+        </li>
+      </ul>
+  </div>
+    {% endblock %}
+
+    {% block section2 %}
+    <div class="w3-row-padding w3-center w3-padding-64 w3-theme-l1" id="damage">
+        <ul class="w3-ul w3-border">
+          <li class="w3-theme">
+              <p style="font-size: 23px;">Factors</p>
+          </li>
+          <li>
+            <table>
+              <tr>
+                <th style="font-size: 20px;">Drink Driving</th>
+                <th style="font-size: 20px;">Speeding</th>
+                <th style="font-size: 20px;">Fatigue Driver</th>
+                <th style="font-size: 20px;">Defective Vechile</th>
+              </tr>
+              {% for col in column %}
+                <tr>
+                  <td>{{ col[4] }}</td>
+                  <td>{{ col[5] }}</td>
+                  <td>{{ col[6] }}</td>
+                  <td>{{ col[7] }}</td>
+                </tr>
+              {% endfor %}
+            </table>
+          </li>
+        </ul>
+    </div>
+    {% endblock %}
+
+    {% block section3 %}
+    <div class="w3-row-padding w3-center w3-padding-64 w3-theme-l1" id="damage">
+        <ul class="w3-ul w3-border">
+          <li class="w3-theme">
+              <p style="font-size: 23px;">Counts</p>
+          </li>
+          <li>
+            <table>
+              <tr>
+                <th style="font-size: 20px;">Crash Count</th>
+                <th style="font-size: 20px;">Fatility Count</th>
+                <th style="font-size: 20px;">Hospital Count</th>
+                <th style="font-size: 20px;">Medical Treatment Count</th>
+                <th style="font-size: 20px;">Minor Injury Count</th>
+                <th style="font-size: 20px;">All Casualities</th>
+              </tr>
+              {% for col in column %}
+                <tr>
+                  <td>{{ col[8] }}</td>
+                  <td>{{ col[9] }}</td>
+                  <td>{{ col[10] }}</td>
+                  <td>{{ col[11] }}</td>
+                  <td>{{ col[12] }}</td>
+                  <td>{{ col[13] }}</td>
+                </tr>
+                {% endfor %}
+            </table>
+          </li>
+        </ul>
+    </div>
+    {% endblock %}
+
+{% endblock %}
