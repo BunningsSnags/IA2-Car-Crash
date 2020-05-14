@@ -32,14 +32,14 @@
           <table>
             <tr>
               <th style="font-size: 20px;">Severity</th>
-              <th style="font-size: 20px;">Region</th>
+              <th style="font-size: 20px;">Local Suburb</th>
               <th style="font-size: 20px;">Year Recorded</th>
             </tr>
-            {% for col in column %}
+            {% for col in columns %}
               <tr>
-                <td>{{ col[4] }}</td>
+                <td>{{ col[1] }}</td>
                 <td>{{ col[5] }}</td>
-                <td>{{ col[6] }}</td>
+                <td>{{ col[4] }} {{ col[3] }}/{{ col[2] }}</td>
               </tr>
             {% endfor %}
           </table>
@@ -52,22 +52,24 @@
     <div class="w3-row-padding w3-center w3-padding-64 w3-theme-l1" id="damage">
         <ul class="w3-ul w3-border">
           <li class="w3-theme">
-              <p style="font-size: 23px;">Factors</p>
+              <p style="font-size: 23px;">Location</p>
           </li>
           <li>
             <table>
               <tr>
-                <th style="font-size: 20px;">Drink Driving</th>
-                <th style="font-size: 20px;">Speeding</th>
-                <th style="font-size: 20px;">Fatigue Driver</th>
-                <th style="font-size: 20px;">Defective Vechile</th>
+                <th style="font-size: 20px;">Suburb</th>
+                <th style="font-size: 20px;">Post Code</th>
+                <th style="font-size: 20px;">Loc. Police Division</th>
+                <th style="font-size: 20px;">Loc. Police District</th>
+                <th style="font-size: 20px;">Loc. Police Region</th>
               </tr>
-              {% for col in column %}
+              {% for col in columns %}
                 <tr>
-                  <td>{{ col[4] }}</td>
                   <td>{{ col[5] }}</td>
                   <td>{{ col[6] }}</td>
                   <td>{{ col[7] }}</td>
+                  <td>{{ col[8] }}</td>
+                  <td>{{ col[9] }}</td>
                 </tr>
               {% endfor %}
             </table>
@@ -85,21 +87,19 @@
           <li>
             <table>
               <tr>
-                <th style="font-size: 20px;">Crash Count</th>
-                <th style="font-size: 20px;">Fatility Count</th>
-                <th style="font-size: 20px;">Hospital Count</th>
-                <th style="font-size: 20px;">Medical Treatment Count</th>
-                <th style="font-size: 20px;">Minor Injury Count</th>
-                <th style="font-size: 20px;">All Casualities</th>
+                <th style="font-size: 20px;">Crash</th>
+                <th style="font-size: 20px;">Hospital</th>
+                <th style="font-size: 20px;">Medical Treatment</th>
+                <th style="font-size: 20px;">Minor Injury</th>
+                <th style="font-size: 20px;">Total</th>
               </tr>
-              {% for col in column %}
+              {% for col in columns %}
                 <tr>
-                  <td>{{ col[8] }}</td>
-                  <td>{{ col[9] }}</td>
                   <td>{{ col[10] }}</td>
                   <td>{{ col[11] }}</td>
                   <td>{{ col[12] }}</td>
                   <td>{{ col[13] }}</td>
+                  <td>{{ col[14] }}</td>
                 </tr>
                 {% endfor %}
             </table>

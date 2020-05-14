@@ -35,7 +35,7 @@
               <th style="font-size: 20px;">Region</th>
               <th style="font-size: 20px;">Year Recorded</th>
             </tr>
-            {% for col in column %}
+            {% for col in columns %}
               <tr>
                 <td>{{ col[3] }}</td>
                 <td>{{ col[2] }}</td>
@@ -62,7 +62,7 @@
                 <th style="font-size: 20px;">Fatigue Driver</th>
                 <th style="font-size: 20px;">Defective Vechile</th>
               </tr>
-              {% for col in column %}
+              {% for col in columns %}
                 <tr>
                   <td>{{ col[4] }}</td>
                   <td>{{ col[5] }}</td>
@@ -85,14 +85,14 @@
           <li>
             <table>
               <tr>
-                <th style="font-size: 20px;">Crash Count</th>
-                <th style="font-size: 20px;">Fatility Count</th>
-                <th style="font-size: 20px;">Hospital Count</th>
-                <th style="font-size: 20px;">Medical Treatment Count</th>
-                <th style="font-size: 20px;">Minor Injury Count</th>
+                <th style="font-size: 20px;">Crash</th>
+                <th style="font-size: 20px;">Fatility</th>
+                <th style="font-size: 20px;">Hospital</th>
+                <th style="font-size: 20px;">Medical Treatment</th>
+                <th style="font-size: 20px;">Minor Injury</th>
                 <th style="font-size: 20px;">All Casualities</th>
               </tr>
-              {% for col in column %}
+              {% for col in columns %}
                 <tr>
                   <td>{{ col[8] }}</td>
                   <td>{{ col[9] }}</td>

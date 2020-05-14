@@ -52,7 +52,7 @@
         <th>Year Recorded</th>
       </tr>
       <h2 class="w3-center">Mid-Range Recordings</h2>
-      {% for row in getmapdata %}
+      {% for row in getcrashdata %}
         {% if row[3] == "Medical treatment" or row[3] == "Hospitalisation" %}
         <tr>
           <td><a class="w3-button w3-padding-small w3-border w3-border-teal" href="factorList/{{row.id}}">{{ row[0] }}</a></td>

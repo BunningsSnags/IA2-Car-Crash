@@ -44,9 +44,12 @@ def factorList():
 @APP.route("/factorList/<int:IDcrash>")
 def factor(IDcrash):
     conn = get_factordb()
-    col = conn.execute("SELECT * FROM data WHERE id =?;", (IDcrash,))
+    crashRows = conn.execute("SELECT * FROM data WHERE id =?;", (IDcrash,))
+    crashInfo = []
+    for col in crashRows:
+        crashInfo.append(list(col))
 
-    return render_template("factor.html", column=col, IDcrash = IDcrash)
+    return render_template("factor.html", columns=crashInfo, IDcrash = IDcrash)
 
 """------------------------------------------------------------------------------------------------------------------------------"""
 
@@ -70,9 +73,12 @@ def locationList():
 @APP.route("/locationList/<int:IDmap>")
 def location(IDmap):
     conn = get_mapdb()
-    col = conn.execute("SELECT * FROM data WHERE id =?;", (IDmap,))
+    mapRows = conn.execute("SELECT * FROM data WHERE id =?;", (IDmap,))
+    mapInfo = []
+    for col in mapRows:
+        mapInfo.append(list(col))
 
-    return render_template("location.html", column=col, IDmap=IDmap)
+    return render_template("location.html", columns=mapInfo, IDmap = IDmap)
 
 @APP.route('/help')
 def help():
