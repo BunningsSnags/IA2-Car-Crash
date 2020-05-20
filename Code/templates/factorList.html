@@ -21,70 +21,70 @@
 
 {% block content %}
     <!-- Work Row -->
-    {% block section1 %}
-      <table id="minor">
-        <tr>
-          <th style="width: 400px;">Crash ID</th>
-          <th>Severity</th>
-          <th>Region</th>
-          <th>Year Recorded</th>
-        </tr>
-        <h2 class="w3-center">Minor Damage</h2>
-        {% for row in getcrashdata %}
-          {% if row[3] == "Property damage only" or row[3] == "Minor injury" %}
+      <input style="margin-right: 10px;" type="text" id="searchBar" onkeyup="search()" placeholder="Search.." title="Type in a category">
+        {% block section1 %}
+          <table id="minor">
+            <tr>
+              <th style="width: 400px;">Crash ID</th>
+              <th>Severity</th>
+              <th>Region</th>
+              <th>Year Recorded</th>
+            </tr>
+            <h2 class="w3-center">Minor Damage</h2>
+            {% for row in getcrashdata %}
+              {% if row[3] == "Property damage only" or row[3] == "Minor injury" %}
+              <tr>
+                <td><a class="w3-button w3-padding-small w3-border w3-border-teal" href="factorList/{{row.id}}">{{ row[0] }}</a></td>
+                <td>{{ row[3] }}</td>
+                <td>{{ row[2] }}</td>
+                <td>{{ row[1] }}</td>
+              </tr>
+              {% endif %}
+            {% endfor %}
+          </table>
+        {% endblock %}
+
+        {% block section2 %}
+        <table id="mid">
           <tr>
-            <td><a class="w3-button w3-padding-small w3-border w3-border-teal" href="factorList/{{row.id}}">{{ row[0] }}</a></td>
-            <td>{{ row[3] }}</td>
-            <td>{{ row[2] }}</td>
-            <td>{{ row[1] }}</td>
+            <th style="width: 400px;">Crash ID</th>
+            <th>Severity</th>
+            <th>Region</th>
+            <th>Year Recorded</th>
           </tr>
-          {% endif %}
-        {% endfor %}
-      </table>
-    {% endblock %}
+          <h2 class="w3-center">Mid-Range Recordings</h2>
+          {% for row in getcrashdata %}
+            {% if row[3] == "Medical treatment" or row[3] == "Hospitalisation" %}
+            <tr>
+              <td><a class="w3-button w3-padding-small w3-border w3-border-teal" href="factorList/{{row.id}}">{{ row[0] }}</a></td>
+              <td>{{ row[3] }}</td>
+              <td>{{ row[2] }}</td>
+              <td>{{ row[1] }}</td>
+            </tr>
+            {% endif %}
+          {% endfor %}
+        </table>
+        {% endblock %}
 
-    {% block section2 %}
-    <table id="mid">
-      <tr>
-        <th style="width: 400px;">Crash ID</th>
-        <th>Severity</th>
-        <th>Region</th>
-        <th>Year Recorded</th>
-      </tr>
-      <h2 class="w3-center">Mid-Range Recordings</h2>
-      {% for row in getcrashdata %}
-        {% if row[3] == "Medical treatment" or row[3] == "Hospitalisation" %}
-        <tr>
-          <td><a class="w3-button w3-padding-small w3-border w3-border-teal" href="factorList/{{row.id}}">{{ row[0] }}</a></td>
-          <td>{{ row[3] }}</td>
-          <td>{{ row[2] }}</td>
-          <td>{{ row[1] }}</td>
-        </tr>
-        {% endif %}
-      {% endfor %}
-    </table>
-    {% endblock %}
-
-    {% block section3 %}
-    <table id="major">
-      <tr>
-        <th style="width: 400px;">Crash ID</th>
-        <th>Severity</th>
-        <th>Region</th>
-        <th>Year Recorded</th>
-      </tr>
-      <h2 class="w3-center">Major Recordings</h2>
-      {% for row in getmapdata %}
-        {% if row[3] == "Fatal" or row[3] == "Hospitalisation" %}
-        <tr>
-          <td><a class="w3-button w3-padding-small w3-border w3-border-teal" href="factorList/{{row.id}}">{{ row[0] }}</a></td>
-          <td>{{ row[3] }}</td>
-          <td>{{ row[2] }}</td>
-          <td>{{ row[1] }}</td>
-        </tr>
-        {% endif %}
-      {% endfor %}
-    </table>
-    {% endblock %}
-
+        {% block section3 %}
+        <table id="major">
+          <tr>
+            <th style="width: 400px;">Crash ID</th>
+            <th>Severity</th>
+            <th>Region</th>
+            <th>Year Recorded</th>
+          </tr>
+          <h2 class="w3-center">Major Recordings</h2>
+          {% for row in getcrashdata %}
+            {% if row[3] == "Fatal" or row[3] == "Hospitalisation" %}
+            <tr>
+              <td><a class="w3-button w3-padding-small w3-border w3-border-teal" href="factorList/{{row.id}}">{{ row[0] }}</a></td>
+              <td>{{ row[3] }}</td>
+              <td>{{ row[2] }}</td>
+              <td>{{ row[1] }}</td>
+            </tr>
+            {% endif %}
+          {% endfor %}
+        </table>
+        {% endblock %}
 {% endblock %}

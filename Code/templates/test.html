@@ -1,0 +1,60 @@
+{% extends "layout.html" %}
+
+{% block title %}
+  <title>Factors</title>
+{% endblock %}
+
+{% block heading %}
+  <h1>Factors Page</h1>
+{% endblock %}
+
+{% block dropdown %}
+    <div class="w3-dropdown-hover w3-hide-small">
+        <button class="w3-button" title="Notifications">Damage Factor<i class="fa fa-caret-down"></i></button>     
+        <div class="w3-dropdown-content w3-card-4 w3-bar-block">
+            <a href="#minor" class="w3-bar-item w3-button">Minor</a>
+            <a href="#mid" class="w3-bar-item w3-button">Mid-Range</a>
+            <a href="#major" class="w3-bar-item w3-button">Major</a>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <!-- Work Row -->
+      <input type="text" id="searchBar" onkeyup="search()" placeholder="Search.." title="Type in a category">
+      <ul id="list">
+        {% block section1 %}
+          <table>
+            <tr>
+              <th style="width: 400px;">Crash ID</th>
+              <th>Severity</th>
+              <th>Region</th>
+              <th>Year Recorded</th>
+            </tr>
+            <h2 class="w3-center">Minor Damage</h2>
+            {% for row in getcrashdata %}
+              {% if row[3] == "Property damage only" or row[3] == "Minor injury" %}
+              <tr id="minor">
+                <td><a class="w3-button w3-padding-small w3-border w3-border-teal" href="factorList/{{row.id}}">{{ row[0] }}</a></td>
+                <td>{{ row[3] }}</td>
+                <td>{{ row[2] }}</td>
+                <td>{{ row[1] }}</td>
+              </tr>
+              {% endif %}
+            {% endfor %}
+
+            <h2 class="w3-center">Mid-Range Damage</h2>
+            {% for row in getcrashdata %}
+              {% if row[3] == "Medical treatment" or row[3] == "Hospitalisation" %}
+                <tr id="mid">
+                  <td><a class="w3-button w3-padding-small w3-border w3-border-teal" href="factorList/{{row.id}}">{{ row[0] }}</a></td>
+                  <td>{{ row[3] }}</td>
+                  <td>{{ row[2] }}</td>
+                  <td>{{ row[1] }}</td>
+                </tr>
+                {% endif %}
+              {% endfor %}
+          </table>
+        {% endblock %}
+      </ul>
+{% endblock %}

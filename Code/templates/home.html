@@ -18,6 +18,8 @@
         </div>
     </div>
 {% endblock %}
+{% block search %}
+{% endblock %}
 
 {% block content %}
   <!-- Work Row -->
@@ -79,7 +81,7 @@
                 </li>
                 <li style='height: 160px; text-align: center;'><b>Mid-range</b> class involves medical attention that has little to no fatality rate. This includes Medical Attention and Hospitalisation</li>
                     <li class="w3-theme-l5 w3-padding">
-                    <button href="/factorList" class="w3-button w3-teal w3-padding-large">View Factors</button>
+                    <button class="w3-button w3-teal w3-padding-large" href="/factorList">View Factors</button>
                     <button href="/locationList" class="w3-button w3-teal w3-padding-large">View Locations</button>
                 </li>
             </ul>
@@ -101,9 +103,7 @@
     {% endblock %}
 
     {% block section3 %}
-        <div class="w3-row-padding w3-padding-64 w3-theme-l1" id="minimap">
-            <h2>Minimap</h2>
-        </div>
+        
     {% endblock %}
 
 {% endblock %}

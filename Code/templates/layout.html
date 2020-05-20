@@ -8,6 +8,7 @@
         <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="/static/styles.css">
+        <script src="search.js"></script>
 
         <!-- Title -->
         {% block title %}
@@ -38,6 +39,8 @@
                     <a href="{{url_for('report')}}" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Report Crash</a>
                     {% block dropdown %}
                         <!-- Dropdown code here -->
+                    {% endblock %}
+                    {% block search %}
                     {% endblock %}
                 <!-- <a href="#" class="w3-bar-item w3-button w3-hide-small w3-right w3-hover-teal" title="Search"><i class="fa fa-search"></i></a> -->
                 </div>
@@ -100,6 +103,32 @@
                 x.className += " w3-show";
             } else { 
                 x.className = x.className.replace(" w3-show", "");
+            }
+        }
+
+        // Get the modal
+        var modal = document.getElementById("myModal");
+
+        // Get the button that opens the modal
+        var btn = document.getElementById("myBtn");
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+
+        // When the user clicks the button, open the modal 
+        btn.onclick = function() {
+            modal.style.display = "block";
+        }
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() {
+        modal.style.display = "none";
+        }
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
             }
         }
     </script>
