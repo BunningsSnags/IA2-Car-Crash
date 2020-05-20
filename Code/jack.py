@@ -22,6 +22,7 @@ def home():
     initdb_map() # your init table function (locationstable)
     return render_template('home.html')
 
+# Change Variable Names
 @APP.route('Path to factor list')
 def factorList():
     upload_factor('Name of location database variable')
@@ -41,6 +42,7 @@ def factorList():
 
 """------------------------------------------------------------------------------------------------------------------------------"""
 
+# Change Variable Names
 @APP.route('Path to location list')
 def locationList():
     upload_map('Name of location database variable')
